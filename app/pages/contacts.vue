@@ -75,13 +75,13 @@ const handlePrint = () => window.print()
       <a href="tel:+79000000000" class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 transition hover:bg-brand-cream/70 sm:p-6">
         <Icon name="ph:phone" class="h-7 w-7 text-brand-gold" />
         <p class="text-sm text-brand-dark/50">Отдел продаж</p>
-        <p class="font-display text-xl">+7 900 000-00-00</p>
+        <p class="font-display text-lg sm:text-xl">+7 900 000-00-00</p>
       </a>
 
       <a href="mailto:support@blink-shop.ru?subject=Вопрос%20с%20сайта" class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 transition hover:bg-brand-cream/70 sm:p-6">
         <Icon name="ph:envelope-simple" class="h-7 w-7 text-brand-gold" />
         <p class="text-sm text-brand-dark/50">Почта</p>
-        <p class="font-display text-xl">support@blink-shop.ru</p>
+        <p class="break-words font-display text-base sm:text-xl [overflow-wrap:anywhere]">support@blink-shop.ru</p>
       </a>
 
       <div class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 sm:p-6">
@@ -226,16 +226,16 @@ const handlePrint = () => window.print()
     <!-- Реквизиты -->
     <div class="mt-16">
       <h2 class="font-display text-3xl sm:text-4xl">Реквизиты</h2>
-      <div class="relative mt-6 rounded-2xl bg-brand-cream p-6 sm:p-8">
+      <div class="mt-6 flex flex-col rounded-2xl bg-brand-cream p-5 sm:relative sm:block sm:p-8">
         <button
           type="button"
-          class="absolute right-4 top-4 flex items-center gap-1 text-sm text-brand-dark/50 transition hover:text-brand-gold"
+          class="mb-4 inline-flex items-center gap-1 self-end text-sm text-brand-dark/50 transition hover:text-brand-gold sm:absolute sm:right-4 sm:top-4 sm:mb-0"
           @click="copyRequisites"
         >
           <Icon :name="copied ? 'ph:check' : 'ph:copy'" class="h-4 w-4" />
           {{ copied ? 'Скопировано' : 'Копировать' }}
         </button>
-        <pre class="whitespace-pre-wrap font-sans text-base text-brand-dark/80">{{ requisites }}</pre>
+        <pre class="whitespace-pre-wrap break-words font-sans text-sm text-brand-dark/80 sm:text-base">{{ requisites }}</pre>
       </div>
     </div>
 

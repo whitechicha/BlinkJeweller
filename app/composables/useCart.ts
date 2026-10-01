@@ -45,5 +45,5 @@ export const useCart = () => {
     }
   };
 
-  return { items, addToCart, removeFromCart, totalCount, totalPrice };
+  return { items, addToCart, removeFromCart, increaseQuantity, totalCount, totalPrice };
 };

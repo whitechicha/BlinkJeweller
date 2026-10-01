@@ -14,7 +14,8 @@ const slideNext = () => swiperInstance.value?.slideNext();
 </script>
 
 <template>
-  <section class="mx-auto max-w-[1800px] px-4 py-10 sm:px-6 sm:py-16 lg:px-10 3xl:max-w-[2200px] 3xl:py-20 4xl:max-w-[2600px] 4xl:py-24">
+  <section id="recommendations" class="collection-section recommended-section py-10 sm:py-16">
+    <div class="collection-inner mx-auto px-4 sm:px-6 lg:px-10">
     <h2 class="mb-6 font-display text-xl sm:mb-8 sm:text-2xl 2xl:text-3xl 3xl:text-4xl">Рекомендуем</h2>
 
     <div class="relative flex items-center gap-2 sm:gap-4">
@@ -27,11 +28,11 @@ const slideNext = () => swiperInstance.value?.slideNext();
       </button>
 
       <Swiper
-        class="flex-1"
-        :loop="true"
+        class="min-w-0 flex-1"
+        :watch-overflow="true"
         :space-between="12"
         :breakpoints="{
-          0: { slidesPerView: 1.15, spaceBetween: 12 },
+          0: { slidesPerView: 1.35, spaceBetween: 12 },
           640: { slidesPerView: 2, spaceBetween: 16 },
           1024: { slidesPerView: 3, spaceBetween: 24 },
         }"
@@ -56,6 +57,7 @@ const slideNext = () => swiperInstance.value?.slideNext();
       >
         <Icon name="ph:caret-right" class="h-5 w-5" />
       </button>
+    </div>
     </div>
   </section>
 </template>

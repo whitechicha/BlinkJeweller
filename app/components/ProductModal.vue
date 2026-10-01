@@ -28,7 +28,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
         class="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/70 p-4"
         @click.self="closeProduct"
       >
-        <div class="relative w-full max-w-lg rounded-2xl bg-brand-cream p-6 sm:p-8">
+        <div class="relative max-h-[calc(100svh-2rem)] w-full max-w-lg overflow-y-auto rounded-2xl bg-brand-cream p-4 sm:p-8">
           <button
             aria-label="Закрыть"
             class="absolute right-4 top-4 text-brand-dark/50 transition hover:text-brand-gold"
@@ -40,7 +40,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
           <img
             :src="selected.image"
             :alt="selected.name"
-            class="mx-auto h-40 w-40 rounded-full object-cover sm:h-48 sm:w-48"
+            class="mx-auto h-32 w-32 rounded-full object-cover sm:h-48 sm:w-48"
           >
 
           <h2 class="mt-6 text-center font-display text-2xl sm:text-3xl">{{ selected.name }}</h2>

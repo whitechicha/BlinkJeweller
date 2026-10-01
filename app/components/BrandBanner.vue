@@ -1,5 +1,5 @@
 <template>
-  <section class="mx-auto max-w-[1800px] px-4 py-10 sm:px-6 sm:py-16 lg:px-10 3xl:max-w-[2200px] 3xl:py-20 4xl:max-w-[2600px] 4xl:py-24">
+  <section class="brand-story-section">
     <div
       class="overflow-hidden rounded-2xl bg-[linear-gradient(90deg,rgba(36,24,17,0.75),rgba(36,24,17,0.35)),url('/img/Womanjeweller.png')] bg-cover bg-center text-brand-cream"
     >
@@ -20,6 +20,11 @@
           Узнать больше
           <Icon name="ph:arrow-right" class="h-4 w-4 3xl:h-5 3xl:w-5" />
         </NuxtLink>
+        <div class="brand-proof grid max-w-2xl grid-cols-3 gap-5 border-t border-brand-cream/20 pt-6 sm:gap-10">
+          <div><p class="font-display text-2xl sm:text-3xl">5+</p><p class="mt-1 text-xs text-brand-cream/65 sm:text-sm">лет на рынке</p></div>
+          <div><p class="font-display text-2xl sm:text-3xl">10 000+</p><p class="mt-1 text-xs text-brand-cream/65 sm:text-sm">довольных клиентов</p></div>
+          <div><p class="font-display text-2xl sm:text-3xl">100%</p><p class="mt-1 text-xs text-brand-cream/65 sm:text-sm">ручная работа</p></div>
+        </div>
       </div>
     </div>
   </section>
