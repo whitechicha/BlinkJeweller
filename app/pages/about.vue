@@ -33,12 +33,12 @@ const steps = [
 <template>
   <div>
     <section class="mx-auto max-w-[1800px] px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-10 3xl:max-w-[2200px] 3xl:py-32 4xl:max-w-[2600px]">
-      <p class="text-sm tracking-[0.2em] text-brand-gold sm:text-base">О БРЕНДЕ BLINK</p>
+      <p class="text-sm tracking-[0.2em] text-brand-gold sm:text-base">О БРЕНДЕ SAMORODOK</p>
       <h1 class="mt-3 font-display text-4xl sm:text-6xl 2xl:text-7xl 3xl:text-8xl">
         Украшения, которым доверяют
       </h1>
       <p class="mx-auto mt-4 max-w-2xl text-base text-brand-dark/70 sm:text-lg 3xl:text-xl">
-        Blink — небольшая ювелирная мастерская из Санкт-Петербурга. Мы делаем украшения
+        Samorodok — небольшая ювелирная мастерская из Санкт-Петербурга. Мы делаем украшения
         для тех, кто хочет сиять по-настоящему: без переплаты за громкое имя и без компромиссов в качестве.
       </p>
     </section>
@@ -65,20 +65,20 @@ const steps = [
         <div class="overflow-hidden rounded-2xl">
           <img
             src="/img/Womanjeweller.png"
-            alt="Украшение Blink на модели"
+            alt="Украшение Samorodok на модели"
             class="h-64 w-full object-cover sm:h-80 lg:h-full"
           >
         </div>
         <div>
           <h2 class="font-display text-3xl sm:text-4xl 2xl:text-5xl">Наша история</h2>
           <p class="mt-4 text-base text-brand-dark/70 sm:text-lg">
-            Blink начинался в 2019 году как маленькая мастерская на двоих: ювелир и человек,
+            Samorodok начинался в 2019 году как маленькая мастерская на двоих: ювелир и человек,
             который отвечал за всё остальное. Первые кольца мы делали на заказ для друзей —
             и очень быстро поняли, что людям не хватает украшений без наценки за бренд, но с
             настоящим вниманием к деталям.
           </p>
           <p class="mt-4 text-base text-brand-dark/70 sm:text-lg">
-            Сегодня в команде Blink — ювелиры, дизайнер и служба поддержки, которая отвечает
+            Сегодня в команде Samorodok — ювелиры, дизайнер и служба поддержки, которая отвечает
             в тот же день. Но подход не изменился: мы по-прежнему проверяем вручную каждое
             изделие перед отправкой и стараемся, чтобы каждый заказ ощущался как подарок.
           </p>

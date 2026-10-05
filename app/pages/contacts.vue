@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { socialLinks } from '~/utils/socialLinks';
 const form = reactive({
   name: "",
   contact: "",
@@ -72,24 +73,24 @@ const handlePrint = () => window.print()
 
     <!-- Быстрые способы связи -->
     <div class="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-      <a href="tel:+79000000000" class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 transition hover:bg-brand-cream/70 sm:p-6">
+      <a href="tel:+79885475999" class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 transition hover:bg-brand-cream/70 sm:p-6">
         <Icon name="ph:phone" class="h-7 w-7 text-brand-gold" />
         <p class="text-sm text-brand-dark/50">Отдел продаж</p>
-        <p class="font-display text-lg sm:text-xl">+7 900 000-00-00</p>
+        <p class="font-display text-lg sm:text-xl">+7 988 547-59-99</p>
       </a>
 
-      <a href="mailto:support@blink-shop.ru?subject=Вопрос%20с%20сайта" class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 transition hover:bg-brand-cream/70 sm:p-6">
-        <Icon name="ph:envelope-simple" class="h-7 w-7 text-brand-gold" />
-        <p class="text-sm text-brand-dark/50">Почта</p>
-        <p class="break-words font-display text-base sm:text-xl [overflow-wrap:anywhere]">support@blink-shop.ru</p>
+      <a :href="socialLinks.vk" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 transition hover:bg-brand-cream/70 sm:p-6">
+        <Icon name="simple-icons:vk" class="h-7 w-7 text-brand-gold" />
+        <p class="text-sm text-brand-dark/50">ВКонтакте</p>
+        <p class="break-words font-display text-base sm:text-xl [overflow-wrap:anywhere]">samorodok.jeweler</p>
       </a>
 
       <div class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 sm:p-6">
         <Icon name="ph:telegram-logo" class="h-7 w-7 text-brand-gold" />
         <p class="text-sm text-brand-dark/50">Мессенджеры</p>
         <div class="flex flex-wrap gap-3">
-          <a href="tg://resolve?domain=blinkjewelry" class="font-display text-xl hover:text-brand-gold">Telegram</a>
-          <a href="https://wa.me/79000000000" class="font-display text-xl hover:text-brand-gold">WhatsApp</a>
+          <a :href="socialLinks.telegram" target="_blank" rel="noopener noreferrer" class="font-display text-xl hover:text-brand-gold">Telegram</a>
+          <a href="https://wa.me/79885475999" class="font-display text-xl hover:text-brand-gold">WhatsApp</a>
         </div>
         <span class="mt-1 inline-flex w-fit items-center gap-1 rounded-full bg-brand-gold/20 px-2 py-1 text-xs font-medium text-brand-dark/70">
           Отвечаем за 15 минут
@@ -112,14 +113,14 @@ const handlePrint = () => window.print()
           Как нас найти
         </h2>
         <p class="mt-3 text-base text-brand-dark/70 sm:text-lg">
-          190000, г. Санкт-Петербург, ул. Большая Морская, д. 15, 2 этаж, шоурум Blink
+          190000, г. Санкт-Петербург, ул. Большая Морская, д. 15, 2 этаж, шоурум Samorodok
         </p>
         <div class="mt-6 overflow-hidden rounded-2xl">
           <iframe
             src="https://yandex.ru/map-widget/v1/?ll=30.313614%2C59.934280&z=16&pt=30.313614,59.934280,pm2rdm"
             class="h-72 w-full sm:h-96"
             loading="lazy"
-            title="Карта проезда до шоурума Blink"
+            title="Карта проезда до шоурума Samorodok"
           />
         </div>
       </div>
@@ -128,7 +129,7 @@ const handlePrint = () => window.print()
         <p class="text-base text-brand-dark/60">Отсканируйте, чтобы открыть маршрут в приложении карт</p>
         <img
           src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://yandex.ru/maps/?pt=30.313614,59.934280&z=16&l=map"
-          alt="QR-код с маршрутом до шоурума Blink"
+          alt="QR-код с маршрутом до шоурума Samorodok"
           class="mt-4 h-40 w-40 rounded-xl bg-white p-2 sm:h-48 sm:w-48"
         >
       </div>
@@ -242,9 +243,9 @@ const handlePrint = () => window.print()
     <!-- Соцсети и печать -->
     <div class="mt-16 flex flex-col items-center justify-between gap-6 border-t border-brand-dark/10 pt-10 sm:flex-row">
       <div class="flex gap-4 text-brand-dark/70">
-        <a href="#" aria-label="VK" class="transition hover:text-brand-gold"><Icon name="simple-icons:vk" class="h-7 w-7" /></a>
-        <a href="tg://resolve?domain=blinkjewelry" aria-label="Telegram" class="transition hover:text-brand-gold"><Icon name="ph:telegram-logo" class="h-7 w-7" /></a>
-        <a href="#" aria-label="Instagram" class="transition hover:text-brand-gold"><Icon name="ph:instagram-logo" class="h-7 w-7" /></a>
+        <a :href="socialLinks.vk" target="_blank" rel="noopener noreferrer" aria-label="VK (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="simple-icons:vk" class="h-7 w-7" /></a>
+        <a :href="socialLinks.telegram" target="_blank" rel="noopener noreferrer" aria-label="Telegram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="ph:telegram-logo" class="h-7 w-7" /></a>
+        <a :href="socialLinks.instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="ph:instagram-logo" class="h-7 w-7" /></a>
       </div>
 
       <button

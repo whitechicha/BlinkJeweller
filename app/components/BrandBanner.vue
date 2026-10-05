@@ -10,7 +10,7 @@
         </div>
         <h2 class="font-display text-2xl sm:text-3xl 2xl:text-4xl 3xl:text-5xl">Украшения с характером</h2>
         <p class="max-w-sm text-sm text-brand-cream/80 sm:text-base 2xl:max-w-md 2xl:text-lg 3xl:max-w-lg 3xl:text-xl">
-          Blink — это больше, чем просто украшения. Это способ выразить себя,
+          Samorodok — это больше, чем просто украшения. Это способ выразить себя,
           подчеркнуть свою уникальность и сиять каждый день.
         </p>
         <NuxtLink

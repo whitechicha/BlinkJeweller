@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BrandLogo from './BrandLogo.vue';
+import { socialLinks } from '~/utils/socialLinks';
 const year = new Date().getFullYear()
 
 const navLinks = [
@@ -29,9 +31,9 @@ const navLinks = [
 
       <div class="mt-10 grid gap-8 border-t border-brand-cream/10 pt-8 sm:mt-14 sm:grid-cols-2 sm:gap-10 sm:pt-10 lg:grid-cols-3 3xl:mt-20 3xl:gap-14 3xl:pt-14">
         <div class="footer-brand flex items-center gap-4">
-          <Icon name="ph:diamond-duotone" class="h-8 w-8 text-brand-gold 3xl:h-10 3xl:w-10" />
+          <BrandLogo />
           <div>
-            <p class="footer-brand-name font-display">Blink</p>
+            <p class="footer-brand-name font-display">Samorodok</p>
             <p class="text-sm text-brand-cream/60 3xl:text-base">Блестяще каждый день</p>
           </div>
         </div>
@@ -41,21 +43,21 @@ const navLinks = [
           <dl class="footer-contacts mt-4 grid gap-2 text-xs sm:text-sm 3xl:text-base">
             <div>
               <dt class="text-brand-cream/50">Телеграм</dt>
-              <dd><a href="#" class="hover:text-brand-gold">@blinkjewelry</a></dd>
+              <dd><a :href="socialLinks.telegram" target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold">@samorodokJeweler</a></dd>
             </div>
             <div>
               <dt class="text-brand-cream/50">Телефон</dt>
-              <dd><a href="tel:+79000000000" class="hover:text-brand-gold">+7 900 000-00-00</a></dd>
+              <dd><a href="tel:+79885475999" class="hover:text-brand-gold">+7 988 547-59-99</a></dd>
             </div>
             <div>
-              <dt class="text-brand-cream/50">Почта</dt>
-              <dd><a href="mailto:info@blink-shop.ru" class="hover:text-brand-gold">info@blink-shop.ru</a></dd>
+              <dt class="text-brand-cream/50">ВКонтакте</dt>
+              <dd><a :href="socialLinks.vk" target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold">samorodok.jeweler</a></dd>
             </div>
           </dl>
           <div class="footer-socials mt-4 flex gap-2 text-brand-cream/80">
-            <a href="#" aria-label="VK" class="transition hover:text-brand-gold"><Icon name="simple-icons:vk" class="h-5 w-5" /></a>
-            <a href="#" aria-label="Telegram" class="transition hover:text-brand-gold"><Icon name="ph:telegram-logo" class="h-5 w-5" /></a>
-            <a href="#" aria-label="Instagram" class="transition hover:text-brand-gold"><Icon name="ph:instagram-logo" class="h-5 w-5" /></a>
+            <a :href="socialLinks.vk" target="_blank" rel="noopener noreferrer" aria-label="VK (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="simple-icons:vk" class="h-5 w-5" /></a>
+            <a :href="socialLinks.telegram" target="_blank" rel="noopener noreferrer" aria-label="Telegram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="ph:telegram-logo" class="h-5 w-5" /></a>
+            <a :href="socialLinks.instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="ph:instagram-logo" class="h-5 w-5" /></a>
           </div>
         </div>
 
@@ -72,7 +74,7 @@ const navLinks = [
       </div>
 
       <div class="mt-10 flex flex-col gap-2 border-t border-brand-cream/10 pt-6 text-xs text-brand-cream/40 sm:flex-row sm:items-center sm:justify-between">
-        <p>© {{ year }} Blink. Все права защищены.</p>
+        <p>© {{ year }} Samorodok. Все права защищены.</p>
         <a href="#" class="hover:text-brand-gold">Политика конфиденциальности</a>
       </div>
     </div>

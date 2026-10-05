@@ -1,63 +1,37 @@
 <script setup lang="ts">
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
-import type { Swiper as SwiperInstance } from "swiper";
-
-const { data: products } = await useFetch("/api/products", {
-  query: { tag: "recommended" },
+const { data: products } = await useFetch('/api/products', { query: { tag: 'recommended' } });
+const { openProduct } = useProductModal();
+const currentIndex = ref(0);
+const selection = computed(() => {
+  const list = products.value ?? [];
+  return Array.from({ length: Math.min(3, list.length) }, (_, offset) => list[(currentIndex.value + offset) % list.length]!);
 });
-
-const swiperInstance = shallowRef<SwiperInstance | null>(null);
-
-const slidePrev = () => swiperInstance.value?.slidePrev();
-const slideNext = () => swiperInstance.value?.slideNext();
+const move = (direction: number) => {
+  const count = products.value?.length ?? 0;
+  if (count) currentIndex.value = (currentIndex.value + direction + count) % count;
+};
+const formatPrice = (value: number) => new Intl.NumberFormat('ru-RU').format(value);
 </script>
 
 <template>
-  <section id="recommendations" class="collection-section recommended-section py-10 sm:py-16">
-    <div class="collection-inner mx-auto px-4 sm:px-6 lg:px-10">
-    <h2 class="mb-6 font-display text-xl sm:mb-8 sm:text-2xl 2xl:text-3xl 3xl:text-4xl">Рекомендуем</h2>
-
-    <div class="relative flex items-center gap-2 sm:gap-4">
-      <button
-        aria-label="Назад"
-        class="hidden shrink-0 rounded-full border border-brand-dark/20 p-2 transition hover:border-brand-gold hover:text-brand-gold md:flex"
-        @click="slidePrev"
-      >
-        <Icon name="ph:caret-left" class="h-5 w-5" />
+  <section id="recommendations" class="collection-section recommended-section" aria-labelledby="recommendations-title">
+    <div class="collection-inner editorial-grid mx-auto">
+      <div class="editorial-intro">
+        <p class="editorial-eyebrow">Выбор Samorodok</p>
+        <h2 id="recommendations-title" class="font-display">Рекомендуем</h2>
+        <p class="editorial-description">Украшения, в которые легко влюбиться.</p>
+        <NuxtLink to="/catalog" class="editorial-link">Смотреть подборку <Icon name="ph:arrow-right" class="h-4 w-4" /></NuxtLink>
+        <div v-if="products && products.length > 1" class="editorial-controls">
+          <button type="button" aria-label="Предыдущая подборка" @click="move(-1)"><Icon name="ph:caret-left" class="h-5 w-5" /></button>
+          <span aria-live="polite">{{ String(currentIndex + 1).padStart(2, '0') }} <span class="editorial-total">/ {{ String(products.length).padStart(2, '0') }}</span></span>
+          <button type="button" aria-label="Следующая подборка" @click="move(1)"><Icon name="ph:caret-right" class="h-5 w-5" /></button>
+        </div>
+      </div>
+      <button v-for="(product, index) in selection" :key="product.id" type="button" class="editorial-tile" :class="{ 'editorial-feature': index === 0 }" :aria-label="'Подробнее о товаре: ' + product.name" @click="openProduct(product)">
+        <img :src="product.image" :alt="product.name" width="700" height="800" loading="lazy" decoding="async">
+        <span class="editorial-caption"><span class="font-display">{{ product.name }}</span><span>{{ formatPrice(product.price) }} ₽</span></span>
+        <span class="editorial-tile-arrow" aria-hidden="true"><Icon name="ph:arrow-up-right" class="h-5 w-5" /></span>
       </button>
-
-      <Swiper
-        class="min-w-0 flex-1"
-        :watch-overflow="true"
-        :space-between="12"
-        :breakpoints="{
-          0: { slidesPerView: 1.35, spaceBetween: 12 },
-          640: { slidesPerView: 2, spaceBetween: 16 },
-          1024: { slidesPerView: 3, spaceBetween: 24 },
-        }"
-        @swiper="(instance) => (swiperInstance = instance)"
-      >
-        <SwiperSlide v-for="product in products" :key="product.id">
-          <ProductCard
-            :id="product.id"
-            :name="product.name"
-            :material="product.material"
-            :price="product.price"
-            :image="product.image"
-            :description="product.description"
-          />
-        </SwiperSlide>
-      </Swiper>
-
-      <button
-        aria-label="Вперёд"
-        class="hidden shrink-0 rounded-full border border-brand-dark/20 p-2 transition hover:border-brand-gold hover:text-brand-gold md:flex"
-        @click="slideNext"
-      >
-        <Icon name="ph:caret-right" class="h-5 w-5" />
-      </button>
-    </div>
     </div>
   </section>
 </template>
