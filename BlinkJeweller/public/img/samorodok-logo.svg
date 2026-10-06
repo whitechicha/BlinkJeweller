@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 75 944 845" width="944" height="845" role="img" aria-labelledby="logo-title logo-description">
+<title id="logo-title">Samorodok</title>
+<desc id="logo-description">Векторная адаптация эмблемы: солнечные лучи, ступенчатый контур и вложенные повёрнутые квадраты. Песочный и кофейный цвета.</desc>
+<g fill="#c69a6d">
+<path d="M 202.00 546.00 L 52.00 552.00 L 202.00 558.00 Z"/>
+<path d="M 205.85 502.91 L 56.48 487.98 L 204.18 514.80 Z"/>
+<path d="M 215.66 460.78 L 69.82 425.21 L 212.36 472.32 Z"/>
+<path d="M 231.24 420.43 L 91.77 364.90 L 226.36 431.39 Z"/>
+<path d="M 252.28 382.64 L 121.90 308.24 L 245.93 392.81 Z"/>
+<path d="M 278.38 348.14 L 159.62 256.32 L 270.67 357.33 Z"/>
+<path d="M 309.03 317.61 L 204.20 210.15 L 300.11 325.64 Z"/>
+<path d="M 343.62 291.64 L 254.77 170.64 L 333.68 298.35 Z"/>
+<path d="M 381.50 270.74 L 310.35 138.55 L 370.71 276.00 Z"/>
+<path d="M 421.91 255.32 L 369.85 114.51 L 410.50 259.03 Z"/>
+<path d="M 464.08 245.67 L 432.12 98.99 L 452.26 247.75 Z"/>
+<path d="M 507.18 241.98 L 495.95 92.28 L 495.18 242.40 Z"/>
+<path d="M 550.37 244.33 L 560.08 94.52 L 538.44 243.07 Z"/>
+<path d="M 592.82 252.66 L 623.28 105.66 L 581.17 249.76 Z"/>
+<path d="M 633.69 266.82 L 684.32 125.50 L 622.56 262.33 Z"/>
+<path d="M 672.20 286.53 L 742.00 153.63 L 661.80 280.53 Z"/>
+<path d="M 707.58 311.41 L 795.20 189.52 L 698.13 304.02 Z"/>
+<path d="M 739.16 340.97 L 842.90 232.46 L 730.83 332.34 Z"/>
+<path d="M 766.32 374.64 L 884.15 281.62 L 759.27 364.93 Z"/>
+<path d="M 788.53 411.76 L 918.16 336.04 L 782.90 401.17 Z"/>
+<path d="M 805.36 451.61 L 944.26 394.67 L 801.25 440.34 Z"/>
+<path d="M 816.47 493.42 L 961.95 456.36 L 813.98 481.68 Z"/>
+<path d="M 821.66 536.36 L 970.88 519.91 L 820.83 524.39 Z"/>
+</g>
+<g fill="none" stroke="#c69a6d" stroke-linejoin="miter" stroke-linecap="square">
+<path d="M 344 710 H 102 L 239 553 V 391 H 395 L 512 256 L 629 391 H 785 V 553 L 922 710 H 680" stroke-width="14" transform="translate(512 552) scale(1) translate(-512 -552)"/>
+<path d="M 344 710 H 102 L 239 553 V 391 H 395 L 512 256 L 629 391 H 785 V 553 L 922 710 H 680" stroke-width="7" transform="translate(512 552) scale(0.955) translate(-512 -552)"/>
+<path d="M 344 710 H 102 L 239 553 V 391 H 395 L 512 256 L 629 391 H 785 V 553 L 922 710 H 680" stroke-width="7" transform="translate(512 552) scale(0.91) translate(-512 -552)"/>
+<path d="M 322 646 L 512 880 L 702 646" stroke-width="14"/>
+<path d="M 342 632 L 512 846 L 682 632" stroke-width="7"/>
+<path d="M 360 621 L 512 811 L 664 621" stroke-width="7"/>
+<rect x="387.000" y="427.000" width="250.000" height="250.000" transform="rotate(45 512 552)" stroke-width="9"/>
+<rect x="402.746" y="442.746" width="218.508" height="218.508" transform="rotate(36 512 552)" stroke-width="6"/>
+<rect x="416.508" y="456.508" width="190.983" height="190.983" transform="rotate(27 512 552)" stroke-width="6"/>
+<rect x="428.537" y="468.537" width="166.925" height="166.925" transform="rotate(18 512 552)" stroke-width="6"/>
+<rect x="439.051" y="479.051" width="145.898" height="145.898" transform="rotate(9 512 552)" stroke-width="6"/>
+<rect x="448.240" y="488.240" width="127.520" height="127.520" transform="rotate(0 512 552)" stroke-width="6"/>
+</g></svg>
