@@ -34,7 +34,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
             class="absolute right-4 top-4 text-brand-dark/50 transition hover:text-brand-gold"
             @click="closeProduct"
           >
-            <Icon name="ph:x" class="h-6 w-6" />
+            <img src="/icons/ph-x-dark.svg" class="site-icon h-6 w-6" alt="" aria-hidden="true">
           </button>
 
           <img

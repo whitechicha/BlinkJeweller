@@ -26,7 +26,7 @@ const price = computed(() => new Intl.NumberFormat('ru-RU').format(props.product
     <p class="bestseller-material">{{ product.material }}</p>
     <div class="bestseller-purchase">
       <p class="font-sans">{{ price }} ₽</p>
-      <button type="button" class="bestseller-add" :class="{ 'is-added': justAdded }" :aria-label="'Добавить в корзину: ' + product.name" @click="add"><Icon :name="justAdded ? 'ph:check' : 'ph:plus'" class="h-5 w-5" /></button>
+      <button type="button" class="bestseller-add" :class="{ 'is-added': justAdded }" :aria-label="'Добавить в корзину: ' + product.name" @click="add"><img :src="justAdded ? '/icons/ph-check-dark.svg' : '/icons/ph-plus-cream.svg'" class="site-icon h-5 w-5" alt="" aria-hidden="true"></button>
     </div>
     <span role="status" class="sr-only">{{ justAdded ? product.name + ' добавлен в корзину' : '' }}</span>
   </article>

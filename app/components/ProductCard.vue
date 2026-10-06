@@ -30,7 +30,7 @@ const showDetails = () => {
 </script>
 
 <template>
-  <div class="product-card flex h-full flex-col items-center rounded-2xl bg-brand-cream p-3 text-center sm:p-6 2xl:p-8 3xl:p-10">
+  <article class="product-card flex h-full flex-col items-center rounded-2xl bg-brand-cream p-3 text-center sm:p-6 2xl:p-8 3xl:p-10">
     <button
       type="button"
       class="flex w-full flex-col items-center text-center"
@@ -58,5 +58,5 @@ const showDetails = () => {
       {{ justAdded ? 'Добавлено' : 'В корзину' }}
     </button>
     <span role="status" class="sr-only">{{ justAdded ? `${name} добавлен в корзину` : '' }}</span>
-  </div>
+  </article>
 </template>

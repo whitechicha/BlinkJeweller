@@ -1,75 +1,45 @@
-# Nuxt Minimal Starter
+# Samorodok
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Ювелирный сайт на Nuxt 4, Vue 3 и Tailwind CSS. Исходники, изображения, SVG-иконки и версии зависимостей сохранены в репозитории.
 
-## Setup
+## Установка на другом устройстве
 
-Make sure to install dependencies:
+Установите Git и Node.js 24 (проверена версия 24.21.0). Склонируйте репозиторий или скачайте Code → Download ZIP на GitHub.
 
-```bash
-# npm
-npm install
+Откройте терминал в папке BlinkJeweller:
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+```sh
+npm ci
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Откройте http://localhost:3000. Если PowerShell блокирует npm.ps1, используйте npm.cmd вместо npm.
 
-Build the application for production:
+npm ci устанавливает версии из package-lock.json. Копировать node_modules, .nuxt и .output между устройствами не нужно.
 
-```bash
-# npm
+## Проверка и сборка
+
+```sh
+npm run typecheck
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+node .output/server/index.mjs
 ```
 
-Locally preview production build:
+Собирайте сайт на целевом устройстве: обработка изображений использует платформенные бинарные файлы.
 
-```bash
-# npm
-npm run preview
+## Структура
 
-# pnpm
-pnpm preview
+- app/components — шапка, футер, карточки, слайдер и модальные окна.
+- app/pages — страницы сайта.
+- app/assets/css/main.css — стили и адаптивная вёрстка.
+- public/img и public/icons — изображения и SVG-иконки.
+- server/api/products.get.ts — данные товаров.
+- server/api/contact.post.ts — демонстрационная форма; отправка в CRM/почту ещё не подключена.
 
-# yarn
-yarn preview
+## CloudPub
 
-# bun
-bun run preview
-```
+Направьте туннель на http://localhost:3000. В nuxt.config.ts укажите свой домен в vite.server.allowedHosts без протокола и завершающего слеша. Сейчас разрешён samorodok-web.cloudpub.ru.
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Codex
+
+Навык UI UX Pro Max устанавливается отдельно из https://github.com/nextlevelbuilder/ui-ux-pro-max-skill. Для запуска сайта навык не нужен.

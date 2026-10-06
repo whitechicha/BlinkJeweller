@@ -39,7 +39,7 @@ defineExpose({ open });
     <div class="p-6 sm:p-8">
       <div class="mb-6 flex items-center justify-between gap-4">
         <h2 id="search-title" class="font-display text-2xl">Поиск по странице</h2>
-        <button type="button" aria-label="Закрыть поиск" class="header-icon" @click="dialog?.close()"><Icon name="ph:x" class="h-6 w-6" /></button>
+        <button type="button" aria-label="Закрыть поиск" class="header-icon" @click="dialog?.close()"><img src="/icons/ph-x-dark.svg" class="site-icon h-6 w-6" alt="" aria-hidden="true"></button>
       </div>
       <label for="page-search-input" class="mb-2 block text-sm text-brand-dark/70">Название украшения или слово из описания</label>
       <input id="page-search-input" ref="input" v-model="query" type="search" placeholder="Например, серебро" class="w-full rounded-xl border border-brand-dark/20 bg-white px-4 py-3" autocomplete="off">

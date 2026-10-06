@@ -88,7 +88,7 @@ const productSections = computed(() => categories.slice(1).map(category => ({
         <div class="catalog-search-field">
           <label for="catalog-search" class="catalog-label">Поиск по каталогу</label>
           <div class="catalog-search-input">
-            <Icon name="ph:magnifying-glass" class="h-5 w-5 shrink-0" />
+            <img src="/icons/ph-magnifying-glass-dark.svg" class="site-icon h-5 w-5 shrink-0" alt="" aria-hidden="true">
             <input id="catalog-search" v-model="searchQuery" type="search" placeholder="Название, металл или камень" autocomplete="off">
           </div>
         </div>
@@ -153,10 +153,10 @@ const productSections = computed(() => categories.slice(1).map(category => ({
       </div>
       <p v-if="priceError" id="catalog-price-error" role="alert" class="catalog-price-error">{{ priceError }}</p>
       <div v-if="hasFilters" class="catalog-active-filters" aria-label="Применённые фильтры">
-        <button v-if="searchQuery.trim()" type="button" :aria-label="'Убрать поиск: ' + searchQuery" @click="searchQuery = ''">Поиск: {{ searchQuery }} <Icon name="ph:x" class="h-4 w-4" /></button>
-        <button v-if="selectedCategory !== 'Все'" type="button" :aria-label="'Убрать категорию: ' + selectedCategory" @click="selectedCategory = 'Все'">{{ selectedCategory }} <Icon name="ph:x" class="h-4 w-4" /></button>
-        <button v-if="selectedMetal !== 'Все'" type="button" :aria-label="'Убрать металл: ' + selectedMetal" @click="selectedMetal = 'Все'">{{ selectedMetal }} <Icon name="ph:x" class="h-4 w-4" /></button>
-        <button v-if="minPrice !== '' || maxPrice !== ''" type="button" aria-label="Убрать диапазон цен" @click="minPrice = ''; maxPrice = ''">{{ minPrice ? 'От ' + minPrice + ' ₽' : '' }} {{ maxPrice ? 'До ' + maxPrice + ' ₽' : '' }} <Icon name="ph:x" class="h-4 w-4" /></button>
+        <button v-if="searchQuery.trim()" type="button" :aria-label="'Убрать поиск: ' + searchQuery" @click="searchQuery = ''">Поиск: {{ searchQuery }} <img src="/icons/ph-x-dark.svg" class="site-icon h-4 w-4" alt="" aria-hidden="true"></button>
+        <button v-if="selectedCategory !== 'Все'" type="button" :aria-label="'Убрать категорию: ' + selectedCategory" @click="selectedCategory = 'Все'">{{ selectedCategory }} <img src="/icons/ph-x-dark.svg" class="site-icon h-4 w-4" alt="" aria-hidden="true"></button>
+        <button v-if="selectedMetal !== 'Все'" type="button" :aria-label="'Убрать металл: ' + selectedMetal" @click="selectedMetal = 'Все'">{{ selectedMetal }} <img src="/icons/ph-x-dark.svg" class="site-icon h-4 w-4" alt="" aria-hidden="true"></button>
+        <button v-if="minPrice !== '' || maxPrice !== ''" type="button" aria-label="Убрать диапазон цен" @click="minPrice = ''; maxPrice = ''">{{ minPrice ? 'От ' + minPrice + ' ₽' : '' }} {{ maxPrice ? 'До ' + maxPrice + ' ₽' : '' }} <img src="/icons/ph-x-dark.svg" class="site-icon h-4 w-4" alt="" aria-hidden="true"></button>
       </div>
     </section>
 
@@ -230,7 +230,9 @@ const productSections = computed(() => categories.slice(1).map(category => ({
 .catalog-products :deep(.bestseller-photo) { border-radius: 12px; }
 .catalog-products :deep(.bestseller-material) { color: #796452; }
 .catalog-products :deep(.bestseller-add) { border-color: #a48a73; }
+.catalog-products :deep(.bestseller-add .site-icon) { filter: brightness(0); }
 .catalog-products :deep(.bestseller-add:hover) { background: #241811; color: #f7f1e8; }
+.catalog-products :deep(.bestseller-add:hover .site-icon) { filter: brightness(0) invert(1); }
 .catalog-products :deep(.bestseller-card h3) { font-size: clamp(17px, 1.5vw, 23px); }
 .catalog-products :deep(.bestseller-purchase p) { font-size: clamp(17px, 1.55vw, 24px); }
 .catalog-search-row { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 20px; margin-bottom: 24px; }

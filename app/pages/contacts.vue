@@ -74,19 +74,19 @@ const handlePrint = () => window.print()
     <!-- Быстрые способы связи -->
     <div class="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
       <a href="tel:+79885475999" class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 transition hover:bg-brand-cream/70 sm:p-6">
-        <Icon name="ph:phone" class="h-7 w-7 text-brand-gold" />
+        <img src="/icons/ph-phone-gold.svg" class="site-icon h-7 w-7 text-brand-gold" alt="" aria-hidden="true">
         <p class="text-sm text-brand-dark/50">Отдел продаж</p>
         <p class="font-display text-lg sm:text-xl">+7 988 547-59-99</p>
       </a>
 
       <a :href="socialLinks.vk" target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 transition hover:bg-brand-cream/70 sm:p-6">
-        <Icon name="simple-icons:vk" class="h-7 w-7 text-brand-gold" />
+        <img src="/icons/simple-icons-vk-gold.svg" class="site-icon h-7 w-7 text-brand-gold" alt="" aria-hidden="true">
         <p class="text-sm text-brand-dark/50">ВКонтакте</p>
         <p class="break-words font-display text-base sm:text-xl [overflow-wrap:anywhere]">samorodok.jeweler</p>
       </a>
 
       <div class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 sm:p-6">
-        <Icon name="ph:telegram-logo" class="h-7 w-7 text-brand-gold" />
+        <img src="/icons/ph-telegram-logo-gold.svg" class="site-icon h-7 w-7 text-brand-gold" alt="" aria-hidden="true">
         <p class="text-sm text-brand-dark/50">Мессенджеры</p>
         <div class="flex flex-wrap gap-3">
           <a :href="socialLinks.telegram" target="_blank" rel="noopener noreferrer" class="font-display text-xl hover:text-brand-gold">Telegram</a>
@@ -98,7 +98,7 @@ const handlePrint = () => window.print()
       </div>
 
       <div class="flex flex-col gap-2 rounded-2xl bg-brand-cream p-5 sm:p-6">
-        <Icon name="ph:clock" class="h-7 w-7 text-brand-gold" />
+        <img src="/icons/ph-clock-gold.svg" class="site-icon h-7 w-7 text-brand-gold" alt="" aria-hidden="true">
         <p class="text-sm text-brand-dark/50">Часы работы</p>
         <p class="text-base">Пн–Пт 09:00–18:00 (МСК)</p>
         <p class="text-base text-brand-dark/60">Сб–Вс — выходной, в праздники — по объявлению</p>
@@ -109,7 +109,7 @@ const handlePrint = () => window.print()
     <div class="mt-16 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-12">
       <div>
         <h2 class="flex items-center gap-2 font-display text-3xl sm:text-4xl">
-          <Icon name="ph:map-pin" class="h-7 w-7 text-brand-gold" />
+          <img src="/icons/ph-map-pin-gold.svg" class="site-icon h-7 w-7 text-brand-gold" alt="" aria-hidden="true">
           Как нас найти
         </h2>
         <p class="mt-3 text-base text-brand-dark/70 sm:text-lg">
@@ -141,21 +141,27 @@ const handlePrint = () => window.print()
       <p class="mt-2 text-base text-brand-dark/60">Ответим в течение рабочего дня</p>
 
       <form v-if="submitState !== 'success'" class="mt-6 grid gap-4 sm:max-w-lg" @submit.prevent="handleSubmit">
+        <label for="contact-name" class="sr-only">Ваше имя</label>
         <input
+          id="contact-name"
           v-model="form.name"
           type="text"
           required
           placeholder="Ваше имя"
           class="rounded-lg border border-brand-dark/20 bg-white px-4 py-3 text-base"
         >
+        <label for="contact-address" class="sr-only">Телефон или e-mail</label>
         <input
+          id="contact-address"
           v-model="form.contact"
           type="text"
           required
           placeholder="Телефон или e-mail"
           class="rounded-lg border border-brand-dark/20 bg-white px-4 py-3 text-base"
         >
+        <label for="contact-message" class="sr-only">Сообщение</label>
         <textarea
+          id="contact-message"
           v-model="form.message"
           required
           rows="3"
@@ -176,7 +182,7 @@ const handlePrint = () => window.print()
           {{ submitState === 'loading' ? 'Отправляем…' : 'Отправить' }}
         </button>
 
-        <p v-if="submitState === 'error'" class="text-base text-red-600">Не получилось отправить, попробуйте ещё раз.</p>
+        <p v-if="submitState === 'error'" role="alert" class="text-base text-red-600">Не получилось отправить, попробуйте ещё раз.</p>
         <p class="text-xs text-brand-dark/40">Форма защищена от спама (reCAPTCHA v3)</p>
       </form>
 
@@ -188,8 +194,8 @@ const handlePrint = () => window.print()
     <!-- Доступность -->
     <div class="mt-16 flex flex-col gap-4 rounded-2xl border border-brand-dark/10 p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8">
       <div class="flex gap-4 text-brand-gold">
-        <Icon name="ph:wheelchair" class="h-7 w-7" />
-        <Icon name="ph:elevator" class="h-7 w-7" />
+        <img src="/icons/ph-wheelchair-dark.svg" class="site-icon h-7 w-7" alt="" aria-hidden="true">
+        <img src="/icons/ph-elevator-dark.svg" class="site-icon h-7 w-7" alt="" aria-hidden="true">
       </div>
       <div>
         <h3 class="font-display text-xl">Доступность шоурума</h3>
@@ -210,11 +216,10 @@ const handlePrint = () => window.print()
             @click="toggleBranch(index)"
           >
             <span class="font-display text-xl">{{ branch.title }}</span>
-            <Icon
-              name="ph:caret-down"
-              class="h-5 w-5 shrink-0 transition-transform"
-              :class="{ 'rotate-180': openBranch === index }"
-            />
+            <img
+              src="/icons/ph-caret-down-dark.svg"
+              class="site-icon h-5 w-5 shrink-0 transition-transform"
+              :class="{ 'rotate-180': openBranch === index }" alt="" aria-hidden="true">
           </button>
           <div v-if="openBranch === index" class="px-5 pb-5 text-base text-brand-dark/70 sm:px-6">
             <p>{{ branch.address }}</p>
@@ -233,7 +238,7 @@ const handlePrint = () => window.print()
           class="mb-4 inline-flex items-center gap-1 self-end text-sm text-brand-dark/50 transition hover:text-brand-gold sm:absolute sm:right-4 sm:top-4 sm:mb-0"
           @click="copyRequisites"
         >
-          <Icon :name="copied ? 'ph:check' : 'ph:copy'" class="h-4 w-4" />
+          <img :src="copied ? '/icons/ph-check-dark.svg' : '/icons/ph-copy-dark.svg'" class="site-icon h-4 w-4" alt="" aria-hidden="true">
           {{ copied ? 'Скопировано' : 'Копировать' }}
         </button>
         <pre class="whitespace-pre-wrap break-words font-sans text-sm text-brand-dark/80 sm:text-base">{{ requisites }}</pre>
@@ -243,9 +248,9 @@ const handlePrint = () => window.print()
     <!-- Соцсети и печать -->
     <div class="mt-16 flex flex-col items-center justify-between gap-6 border-t border-brand-dark/10 pt-10 sm:flex-row">
       <div class="flex gap-4 text-brand-dark/70">
-        <a :href="socialLinks.vk" target="_blank" rel="noopener noreferrer" aria-label="VK (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="simple-icons:vk" class="h-7 w-7" /></a>
-        <a :href="socialLinks.telegram" target="_blank" rel="noopener noreferrer" aria-label="Telegram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="ph:telegram-logo" class="h-7 w-7" /></a>
-        <a :href="socialLinks.instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="ph:instagram-logo" class="h-7 w-7" /></a>
+        <a :href="socialLinks.vk" target="_blank" rel="noopener noreferrer" aria-label="VK (откроется в новой вкладке)" class="transition hover:text-brand-gold"><img src="/icons/simple-icons-vk-dark.svg" class="site-icon h-7 w-7" alt="" aria-hidden="true"></a>
+        <a :href="socialLinks.telegram" target="_blank" rel="noopener noreferrer" aria-label="Telegram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><img src="/icons/ph-telegram-logo-dark.svg" class="site-icon h-7 w-7" alt="" aria-hidden="true"></a>
+        <a :href="socialLinks.instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><img src="/icons/ph-instagram-logo-dark.svg" class="site-icon h-7 w-7" alt="" aria-hidden="true"></a>
       </div>
 
       <button
@@ -253,7 +258,7 @@ const handlePrint = () => window.print()
         class="inline-flex items-center gap-2 rounded-full border border-brand-dark/20 px-5 py-2.5 text-base transition hover:border-brand-gold hover:text-brand-gold"
         @click="handlePrint"
       >
-        <Icon name="ph:printer" class="h-4 w-4" />
+        <img src="/icons/ph-printer-dark.svg" class="site-icon h-4 w-4" alt="" aria-hidden="true">
         Печать
       </button>
     </div>

@@ -28,7 +28,7 @@ watch(() => route.fullPath, () => { expanded.value = false; });
   <form class="header-search" role="search" aria-label="Поиск украшений" @submit.prevent="submit" @focusout="event => { if (!(event.currentTarget as HTMLElement).contains(event.relatedTarget as Node | null)) expanded = false; }" @keydown.esc="expanded = false">
     <div class="header-search-field">
       <input id="header-search-input" v-model="query" type="search" aria-label="Поиск украшений" placeholder="Найти украшение" autocomplete="off" :aria-expanded="expanded && !!query.trim()" aria-controls="header-search-results" @focus="expanded = true" @input="expanded = true">
-      <button type="submit" aria-label="Найти"><Icon name="ph:magnifying-glass" class="h-5 w-5" /></button>
+      <button type="submit" aria-label="Найти"><img src="/icons/ph-magnifying-glass-cream.svg" class="site-icon h-5 w-5" alt="" aria-hidden="true"></button>
     </div>
     <div v-if="expanded && query.trim()" id="header-search-results" class="header-search-results">
       <p role="status">{{ matches.length ? `Найдено: ${matches.length}` : 'Ничего не найдено. Попробуйте другое название.' }}</p>

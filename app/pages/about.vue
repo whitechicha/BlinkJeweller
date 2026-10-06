@@ -1,22 +1,22 @@
 <script setup lang="ts">
 const values = [
   {
-    icon: "ph:sparkle",
+    icon: "/icons/ph-sparkle-gold.svg",
     title: "Настоящий блеск",
     text: "Мы не используем дешёвые покрытия и штамповку. Каждый камень закреплён вручную, каждое изделие проверяется перед отправкой.",
   },
   {
-    icon: "ph:hand-heart",
+    icon: "/icons/ph-hand-heart-gold.svg",
     title: "Индивидуальный подход",
     text: "Поможем подобрать украшение под конкретный образ, повод или бюджет — просто напишите нам в Telegram.",
   },
   {
-    icon: "ph:shield-check",
+    icon: "/icons/ph-shield-check-gold.svg",
     title: "Честность",
     text: "Указываем реальный состав металла и камней в каждой карточке товара. Никаких «под золото» и скрытых наценок.",
   },
   {
-    icon: "ph:leaf",
+    icon: "/icons/ph-leaf-gold.svg",
     title: "Ответственный подход",
     text: "Работаем с проверенными поставщиками металла и упаковываем заказы в перерабатываемые материалы.",
   },
@@ -98,7 +98,7 @@ const steps = [
 
         <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <div v-for="value in values" :key="value.title" class="rounded-2xl bg-brand-bg p-6 text-center">
-            <Icon :name="value.icon" class="mx-auto h-10 w-10 text-brand-gold" />
+            <img :src="value.icon" class="site-icon mx-auto h-10 w-10 text-brand-gold" alt="" aria-hidden="true">
             <h3 class="mt-4 font-display text-xl">{{ value.title }}</h3>
             <p class="mt-2 text-base text-brand-dark/60">{{ value.text }}</p>
           </div>
@@ -132,7 +132,7 @@ const steps = [
             class="inline-flex items-center gap-2 rounded-full bg-brand-gold px-6 py-3 text-base font-medium text-brand-dark transition hover:bg-brand-gold/90"
           >
             Смотреть каталог
-            <Icon name="ph:arrow-right" class="h-4 w-4" />
+            <img src="/icons/ph-arrow-right-dark.svg" class="site-icon h-4 w-4" alt="" aria-hidden="true">
           </NuxtLink>
           <NuxtLink
             to="/contacts"

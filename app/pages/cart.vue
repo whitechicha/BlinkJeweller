@@ -43,11 +43,12 @@ const formatPrice = (value: number) =>
           </p>
 
           <button
-            aria-label="Убрать из корзины"
+            type="button"
+            :aria-label="'Убрать из корзины: ' + item.name"
             class="text-brand-dark/40 transition hover:text-brand-gold"
             @click="removeFromCart(item.id)"
           >
-            <Icon name="ph:trash" class="h-5 w-5" />
+            <img src="/icons/ph-trash-dark.svg" class="site-icon h-5 w-5" alt="" aria-hidden="true">
           </button>
         </div>
       </div>

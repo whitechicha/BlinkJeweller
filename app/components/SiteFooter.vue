@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BrandLogo from './BrandLogo.vue';
+import ContactOptions from './ContactOptions.vue';
 import { socialLinks } from '~/utils/socialLinks';
 const year = new Date().getFullYear()
 
@@ -25,7 +26,7 @@ const navLinks = [
           class="inline-flex w-fit items-center gap-2 rounded-full bg-brand-gold px-5 py-2.5 text-xs font-medium text-brand-dark transition hover:bg-brand-gold/90 sm:px-6 sm:py-3 sm:text-sm 3xl:px-8 3xl:py-4 3xl:text-base"
         >
           Смотреть каталог
-          <Icon name="ph:arrow-right" class="h-4 w-4 3xl:h-5 3xl:w-5" />
+          <img src="/icons/ph-arrow-right-cream.svg" class="site-icon h-4 w-4 3xl:h-5 3xl:w-5" alt="" aria-hidden="true">
         </NuxtLink>
       </div>
 
@@ -47,7 +48,7 @@ const navLinks = [
             </div>
             <div>
               <dt class="text-brand-cream/50">Телефон</dt>
-              <dd><a href="tel:+79885475999" class="hover:text-brand-gold">+7 988 547-59-99</a></dd>
+              <dd><ContactOptions id-prefix="footer-contact" text="+7 988 547-59-99" /></dd>
             </div>
             <div>
               <dt class="text-brand-cream/50">ВКонтакте</dt>
@@ -55,21 +56,21 @@ const navLinks = [
             </div>
           </dl>
           <div class="footer-socials mt-4 flex gap-2 text-brand-cream/80">
-            <a :href="socialLinks.vk" target="_blank" rel="noopener noreferrer" aria-label="VK (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="simple-icons:vk" class="h-5 w-5" /></a>
-            <a :href="socialLinks.telegram" target="_blank" rel="noopener noreferrer" aria-label="Telegram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="ph:telegram-logo" class="h-5 w-5" /></a>
-            <a :href="socialLinks.instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><Icon name="ph:instagram-logo" class="h-5 w-5" /></a>
+            <a :href="socialLinks.vk" target="_blank" rel="noopener noreferrer" aria-label="VK (откроется в новой вкладке)" class="transition hover:text-brand-gold"><img src="/icons/simple-icons-vk-cream.svg" class="site-icon h-5 w-5" alt="" aria-hidden="true"></a>
+            <a :href="socialLinks.telegram" target="_blank" rel="noopener noreferrer" aria-label="Telegram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><img src="/icons/ph-telegram-logo-cream.svg" class="site-icon h-5 w-5" alt="" aria-hidden="true"></a>
+            <a :href="socialLinks.instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram (откроется в новой вкладке)" class="transition hover:text-brand-gold"><img src="/icons/ph-instagram-logo-cream.svg" class="site-icon h-5 w-5" alt="" aria-hidden="true"></a>
           </div>
         </div>
 
         <div>
           <p class="text-xs tracking-[0.2em] text-brand-cream/50 3xl:text-sm">НАВИГАЦИЯ</p>
-          <div class="footer-nav-grid mt-4 grid grid-cols-2 gap-2">
+          <nav aria-label="Навигация в подвале" class="footer-nav-grid mt-4 grid grid-cols-2 gap-2">
             <NuxtLink v-for="(link, index) in navLinks" :key="link.to" :to="link.to" class="footer-nav-card">
               <span>{{ link.label }}</span>
               <span class="footer-nav-detail">{{ ['На главную', 'Украшения', 'История бренда', 'Связаться'][index] }}</span>
-              <Icon name="ph:arrow-up-right" class="footer-nav-arrow" />
+              <img src="/icons/ph-arrow-up-right-gold.svg" class="site-icon footer-nav-arrow" alt="" aria-hidden="true">
             </NuxtLink>
-          </div>
+          </nav>
         </div>
       </div>
 
@@ -77,6 +78,9 @@ const navLinks = [
         <p>© {{ year }} Samorodok. Все права защищены.</p>
         <a href="#" class="hover:text-brand-gold">Политика конфиденциальности</a>
       </div>
+      <p class="mt-4 max-w-4xl text-xs leading-relaxed text-brand-cream/60">
+        Instagram принадлежит компании Meta Platforms Inc., признанной экстремистской организацией и запрещённой на территории Российской Федерации.
+      </p>
     </div>
   </footer>
 </template>

@@ -1,9 +1,9 @@
 <template>
-  <section class="mx-auto max-w-[1800px] px-4 py-10 sm:px-6 sm:py-16 lg:px-10 3xl:max-w-[2200px] 3xl:py-20 4xl:max-w-[2600px] 4xl:py-24">
+  <section aria-labelledby="about-preview-title" class="mx-auto max-w-[1800px] px-4 py-10 sm:px-6 sm:py-16 lg:px-10 3xl:max-w-[2200px] 3xl:py-20 4xl:max-w-[2600px] 4xl:py-24">
     <div class="grid gap-8 rounded-2xl bg-brand-cream p-6 sm:gap-10 sm:p-10 lg:grid-cols-[1.2fr_1fr] lg:p-14 3xl:gap-14 3xl:p-16">
       <div>
         <p class="text-xs tracking-[0.2em] text-brand-gold sm:text-sm">О НАС</p>
-        <h2 class="mt-3 font-display text-2xl sm:text-3xl 2xl:text-4xl 3xl:text-5xl">
+        <h2 id="about-preview-title" class="mt-3 font-display text-2xl sm:text-3xl 2xl:text-4xl 3xl:text-5xl">
           Ювелирный бренд, который создаёт украшения с душой
         </h2>
         <p class="mt-4 max-w-xl text-sm text-brand-dark/70 sm:text-base 3xl:text-lg">
@@ -15,7 +15,7 @@
           class="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-brand-dark/20 px-5 py-2.5 text-xs font-medium transition hover:border-brand-gold hover:text-brand-gold sm:px-6 sm:py-3 sm:text-sm 3xl:text-base"
         >
           Узнать больше о нас
-          <Icon name="ph:arrow-right" class="h-4 w-4" />
+          <img src="/icons/ph-arrow-right-dark.svg" class="site-icon h-4 w-4" alt="" aria-hidden="true">
         </NuxtLink>
       </div>
 
